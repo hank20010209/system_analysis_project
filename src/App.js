@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "./Header";
-import SearchBar from "../src/Components/SearchBar"
-import "./App.css";
+import Header from "./Components/Header";
+import ProdjctPage from "./Components/ProductPage"
 import BookData from "./Data.json"
+import "./App.css";
 import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -10,8 +10,7 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <SearchBar placeholder="請輸入書名..." data={BookData}/>
-      {/* <SearchList/> */}
+      <ProdjctPage placeholder="請輸入書名..." data={BookData}/>
     </div>
   );
 }
