@@ -12,8 +12,8 @@ function Header() {
             <img className="header_logo" src="https://upload.cc/i1/2022/05/27/Q2N3zn.png"/>
             <div className="header_search">
                 {/* <SearchBar placeholder="請輸入書名..." data={BookData}/> */}
-                <input className="header_searchInput" type="text"></input>
-                <SearchIcon className="header_searchIcon"/>
+                {/* <input className="header_searchInput" type="text"></input>
+                <SearchIcon className="header_searchIcon"/> */}
             </div>
             <div className="header_nav">
                 <div className="header_option">
