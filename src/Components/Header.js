@@ -14,12 +14,12 @@ class Header extends React.Component {
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#">
+                            <Nav.Link href="/">
                                 <div className="header_option">
                                     首頁
                                 </div>
                             </Nav.Link>
-                            <Nav.Link href="#AuthorBlock">
+                            <Nav.Link href="/AuthorBlock">
                                 <div className="header_option">
                                     作家專欄
                                 </div>
@@ -27,25 +27,25 @@ class Header extends React.Component {
                         </Nav>
 
                         <Nav>
-                            <Nav.Link href="#deets">
+                            <Nav.Link href="/login">
                                 <div className="header_option">
                                     <span className='header_optionLineFirst'>Hello Guest</span>
                                     <span className='header_optionLineSecond'>Sign In</span>
                                 </div>
                             </Nav.Link>
-                            <Nav.Link href="#memes">
+                            <Nav.Link href="/order">
                                 <div className="header_option">
                                     <span className='header_optionLineFirst'>Return</span>
                                     <span className='header_optionLineSecond'>Orders</span>
                                 </div>
                             </Nav.Link>
-                            <Nav.Link>
+                            <Nav.Link href="/profile">
                                 <div className="header_option">
                                     <span className='header_optionLineFirst'>Your</span>
                                     <span className='header_optionLineSecond'>Prime</span>
                                 </div>
                             </Nav.Link>
-                            <Nav.Link>
+                            <Nav.Link href="/shopingCart">
                                 <div className='header_option'>
                                     <ShoppingBasketIcon className="header_basketIcon" />
                                     <span className="header_basketCount">0</span>

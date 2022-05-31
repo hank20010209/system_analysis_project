@@ -7,7 +7,7 @@ import Data from "../Data.json";
 import ProductBlock from "./ProductBlock";
 import "./ProductPage.css";
 
-function ProdjctPage(props) {
+function ProductPage(props) {
   const [productList, setProductList] = useState(Data);
   const [searchState, setSearchState] = useState(false);
 
@@ -49,7 +49,7 @@ function ProdjctPage(props) {
   );
 }
 
-export default ProdjctPage;
+export default ProductPage;
 
 // <div className="row justify-content-center">
 //   <div className="search-result row mx-0 container">
