@@ -1,0 +1,81 @@
+.searchInputs {
+  margin-top: -100px;
+  display: flex;
+  width: 100%;
+  height: 10%;
+  /* top: 200px; */
+  /* align-items: center; */
+}
+.card-img-top{
+  height:350px;
+}
+.like_label:focus{
+  background-color: red;
+}
+.search input {
+  background-color: rgb(255, 255, 255);
+  border: 0;
+  border-radius: 2px; 
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  font-size: 18px;
+  padding: 8px;
+  height: 40px;
+  width: 1350px;
+  align-items: center;
+  justify-content: center;
+}
+
+.searchIcon {
+  height: 43px;
+  width: 40px;
+  background-color: red;
+  /* display: grid; */
+  place-items: center;
+}
+
+input:focus {
+  outline: none;
+}
+.searchIcon svg {
+  font-size: 40px;
+}
+
+.dataResult {
+  margin-top: 0px;
+  margin-left:180px;
+  width: 1365px;
+  height: 300px;
+  /* position: relative; */
+  background-color: rgb(143, 143, 143);
+  /* box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px; */
+  overflow: hidden;
+  overflow-y: scroll;
+}
+
+.dataResult::-webkit-scrollbar {
+  display: none;
+}
+
+.dataResult .dataItem {
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+}
+
+.dataItem p {
+  margin-left: 10px;
+}
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: lightgrey;
+}
+
+#clearBtn {
+  cursor: pointer;
+}
