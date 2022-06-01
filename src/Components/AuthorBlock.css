@@ -1,0 +1,27 @@
+img{
+    width: 200px;
+    margin-right:10px;
+}
+
+p{
+    margin:0 !important;
+}
+
+a, a:hover, a:focus, a:active{
+    color: black !important;
+    text-decoration: none !important;
+}
+
+.author-block{
+    display:flex;
+    flex-direction: row;
+
+    margin-bottom: 20px;
+    border-bottom: gray solid 1px;
+    padding-bottom: 20px;
+    
+}    
+
+.author-block-title{
+    font-weight: bold;
+}

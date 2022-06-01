@@ -8,7 +8,7 @@ class Header extends React.Component {
         return (
             <Navbar bg="dark" expand="lg" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#">
+                    <Navbar.Brand href="/">
                         <img className="header_logo" src="https://upload.cc/i1/2022/05/27/Q2N3zn.png" alt='logo' />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -19,7 +19,7 @@ class Header extends React.Component {
                                     首頁
                                 </div>
                             </Nav.Link>
-                            <Nav.Link href="/AuthorBlock">
+                            <Nav.Link href="/AuthorBlock/List">
                                 <div className="header_option">
                                     作家專欄
                                 </div>

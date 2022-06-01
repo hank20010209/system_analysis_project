@@ -13,3 +13,29 @@ body {
   margin: 0;
   background-color: rgb(231, 231, 231);
 }
+
+
+.flex-direction-column{
+  display: flex;
+  flex-direction: column;
+}
+.flex-direction-row{
+  display: flex;
+  flex-direction: row;
+}
+.flex-justify-content-between{
+  display: flex;
+  justify-content: space-between;
+}
+.flex-align-items-center{
+  display: flex;
+  align-items: center;
+}
+.flex-align-self-end{
+  display: flex;
+  align-self: flex-end;
+}
+.flex-justify-self-end{
+  display: flex;
+  justify-self: flex-end;
+}

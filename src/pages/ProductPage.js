@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import SearchBar from "./SearchBar";
+import SearchBar from "../components/SearchBar";
 
-import Data from "../Data.json";
+import Data from "../productData.json";
 
-import ProductBlock from "./ProductBlock";
+import ProductBlock from "../components/ProductBlock";
 import "./ProductPage.css";
 
 function ProductPage(props) {
@@ -37,8 +37,8 @@ function ProductPage(props) {
           {
             productList.map((item, index) => {
               return (
-                <Col>
-                  <ProductBlock item={item} key={index} />
+                <Col key={index}>
+                  <ProductBlock item={item}/>
                 </Col>
               )
             })
