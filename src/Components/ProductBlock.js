@@ -5,6 +5,7 @@ import Rating from "@mui/material/Rating";
 import React, { useState } from "react";
 import { Card } from 'react-bootstrap';
 import './ProductBlock.css';
+import Badge from 'react-bootstrap/Badge';
 
 function ProductBlock(props) {
   const [value, setValue] = useState(2);
@@ -32,6 +33,7 @@ function ProductBlock(props) {
           </label>
         </Card.Title>
         <Card.Text>作者 : {props.item.author}</Card.Text>
+        <p><Badge bg="secondary">{props.item.type}</Badge> <Badge bg="secondary">{props.item.categories}</Badge></p><br></br>
         <Typography component="legend">商品評級</Typography>
 
         <Rating
