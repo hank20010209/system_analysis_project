@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import SearchBar from "../components/SearchBar";
 
@@ -8,8 +8,22 @@ import ProductBlock from "../components/ProductBlock";
 import "./ProductPage.css";
 
 function ProductPage(props) {
-  const [productList, setProductList] = useState(Data);
+  const [productList, setProductList] = useState([]);
   const [searchState, setSearchState] = useState(false);
+  useEffect(()=>{
+    const fetchData = async() =>{
+      try{
+        const promise = await fetch('http://localhost:3030/api/product');
+        const json = await promise.json();
+        setProductList(await json);
+      }catch(err){
+        console.error('error:',err.message);
+      }
+    }
+    fetchData();
+  },[])
+
+  
 
   const handleSearch = (keyword) => {
     setSearchState(true);

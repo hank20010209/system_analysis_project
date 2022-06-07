@@ -1,49 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BookmarkAddIcon from '@mui/icons-material/BookmarkAdd';
 import BookmarkAddedIcon from '@mui/icons-material/BookmarkAdded';
 import { IconButton } from "@material-ui/core";
 import './AuthorBlock.css';
-class AuthorBlock extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: this.props.blockData,
-            bookmark: false,
-        };
+import { Link } from 'react-router-dom';
+
+
+const AuthorBlock = (props) => {
+    const [bookmark, setBookmark] = useState(false);
+    const data = props.data;
+
+    const handleBookmark = () => {
+        setBookmark(!bookmark);
     }
 
-    handleBookmark() {
-        this.setState({ bookmark: !this.state.bookmark });
-    }
-
-    render() {
-        const data = this.state.data;
-        return (
-            <div className='author-block flex-direction-row'>
-                <a href={data.link}>
-                    <img src={data.imageLink} alt={data.authorBlockPhoto} />
-                </a>
-                <div className='flex-direction-column'>
-                    <a href={data.link}>
-                        <div className='flex-direction-row flex-justify-content-between flex-align-items-center'>
-                            <h3 className='author-block-title'>{data.title}</h3>
-                            <p className='due-date'>{data.due_date || "~2022/12/31"}</p>
-                        </div>
-                        <p className='author-block-content'>{data.content}</p>
-                    </a>
-                    <div className='flex-direction-row flex-align-self-end'>
-                        <IconButton onClick={() => this.handleBookmark()}>
-                            {
-                                this.state.bookmark ?
-                                    <BookmarkAddedIcon /> :
-                                    <BookmarkAddIcon />
-                            }
-                        </IconButton>
+    return (
+        <div className='author-block d-flex flex-row'>
+            <Link to={{ pathname: `/AuthorBlock/Page/${data.author_block_id}` }}>
+                <img src={data.image_link} alt="author block" />
+            </Link>
+            <div className='w-100 d-flex flex-column'>
+                <Link to={{ pathname: `/AuthorBlock/Page/${data.author_block_id}` }}>
+                    <div className='d-flex flex-row justify-content-between align-items-center'>
+                        <h3 className='author-block-title'>{data.title}</h3>
+                        <p className='due-date'>{data.due_date || "~2022/12/31"}</p>
                     </div>
+                    {/* <p className='author-block-content'>{data.content}</p> */}
+                </Link>
+                <div className='d-flex flex-row align-self-end'>
+                    <IconButton onClick={handleBookmark}>
+                        {
+                            bookmark ?
+                                <BookmarkAddedIcon /> :
+                                <BookmarkAddIcon />
+                        }
+                    </IconButton>
                 </div>
             </div>
-        )
-    }
+        </div>
+    )
 
 }
 

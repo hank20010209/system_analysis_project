@@ -1,0 +1,14 @@
+.media-wrapper{
+    width:50%;
+    padding-top: 28.125%;
+    position:relative;
+}
+.media-wrapper iframe{
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    pointer-events:auto;
+}
+

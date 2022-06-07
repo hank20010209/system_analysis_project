@@ -1,62 +1,65 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import SearchBar from '../components/SearchBar';
 import AuthorBlock from '../components/AuthorBlock';
 import { Container, Row, Col } from 'react-bootstrap';
 import './AuthorBlockListPage.css';
-import authorBlockData from '../authorBlockData.json';
-const Data = [];
 
-class AuthorBlockListPage extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            data: authorBlockData || [],
-            searchState: false,
-        };
+
+const AuthorBlockListPage = (props) => {
+    const [data, setData] = useState([]);
+    const [searchState, setSearchState] = useState(false);
+
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const promise = await fetch('http://localhost:3030/api/authorblock/list');
+                const json = await promise.json();
+                setData(await json);
+            } catch (err) {
+                console.error('error:', err.message);
+            }
+        }
+        fetchData();
+    }, [])
+
+    const handleSearch = (keyword) => {
+        setSearchState(true);
+        setData(data.filter((product) => {
+            return Object.keys(product).some((key) => {
+                return product[key]
+                    .toString()
+                    .toLowerCase()
+                    .includes(
+                        keyword
+                            .toString()
+                            .toLowerCase()
+                    )
+            });
+        }));
     }
 
-    handleSearch(keyword) {
-        this.setState({
-            searchState: true,
-            data: Data.filter((product) => {
-                return Object.keys(product).some((key) => {
-                    return product[key]
-                        .toString()
-                        .toLowerCase()
-                        .includes(
-                            keyword
-                                .toString()
-                                .toLowerCase()
+    return (
+        <div className='author-block-page'>
+            <Container>
+                <Row className='justify-content-center' sm={1} md={1} lg={1}>
+                    <Col sm={12} md={9} lg={9}>
+                        <SearchBar onSearch={handleSearch} placeholder="請輸入作者或主題名稱" searchState={searchState} />
+                    </Col>
+                </Row>
+                {
+                    data.map((data, index) => {
+                        return (
+                            <Row key={index} className='justify-content-center' sm={1} md={1} lg={1}>
+                                <Col sm={8} md={8} lg={8}>
+                                    <AuthorBlock data={data} />
+                                </Col>
+                            </Row>
                         )
-                });
-            })
-        })
-    }
-
-    render() {
-        return (
-            <div className='author-block-page'>
-                <Container>
-                    <Row className='justify-content-center' sm={1} md={1} lg={1}>
-                        <Col sm={12} md={9} lg={9}>
-                            <SearchBar onSearch={() => this.handleSearch()} placeholder="請輸入作者或主題名稱" searchState={this.state.searchState} />
-                        </Col>
-                    </Row>
-                    {
-                        this.state.data.map((data, index) => {
-                            return (
-                                <Row key={index} className='justify-content-center' sm={1} md={1} lg={1}>
-                                    <Col sm={8} md={8} lg={8}>
-                                        <AuthorBlock blockData={data} />
-                                    </Col>
-                                </Row>
-                            )
-                        })
-                    }
-                </Container>
-            </div>
-        )
-    };
+                    })
+                }
+            </Container>
+        </div>
+    )
 }
 
 export default AuthorBlockListPage;
