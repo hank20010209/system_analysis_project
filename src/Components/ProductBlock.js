@@ -6,10 +6,27 @@ import React, { useState } from "react";
 import { Card } from 'react-bootstrap';
 import './ProductBlock.css';
 import Badge from 'react-bootstrap/Badge';
+import {useStateValue} from "../components/StateProvider";
 
 function ProductBlock(props) {
   const [value, setValue] = useState(2);
   const [heartState, setHeartState] = useState("default");
+  // const {state: {cart}, dispatch,} = CartState();
+  const [{basket}, dispatch] = useStateValue();
+
+  console.log("this is the basket >>>", basket);
+  const addToBasket = () =>{
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        title: props.item.title,
+        author: props.item.author,
+        type: props.item.type,
+        categories: props.item.categories 
+      },
+    });
+    localStorage.setItem("basket",JSON.stringify(basket));
+  };
 
   function changeLableStyle() {
     if (heartState === "default") {
@@ -44,10 +61,13 @@ function ProductBlock(props) {
           }}
         />
         <br></br>
+        
+        
         <Button
           color="secondary"
           variant="contained"
           aria-label="add to shopping cart"
+          onClick={addToBasket}
         >
           <AddShoppingCartIcon />
           加入到購物車

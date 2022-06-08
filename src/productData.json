@@ -9,7 +9,8 @@
     "title": "被討厭的勇氣",
     "type": "書本",
     "categories": "心理",
-    "year": 1958
+    "year": 1958,
+    "price": 300
   },
   {
     "author": "周慕姿",
@@ -21,7 +22,8 @@
     "title": "情緒勒索",
     "type": "書本",
     "categories": "心理",
-    "year": 1958
+    "year": 1958,
+    "price": 300
   },
   {
     "author": "安德斯．艾瑞克森",
@@ -33,7 +35,8 @@
     "title": "刻意練習",
     "type": "書本",
     "categories": "自我成長",
-    "year": 1958
+    "year": 1958,
+    "price": 300
   },
   {
     "author": "James Clear",
@@ -45,7 +48,8 @@
     "title": "Atomic Habits",
     "type": "書本",
     "categories": "自我成長",
-    "year": 1958
+    "year": 1958,
+    "price": 300
   },
   {
     "author": "Matthew Walker",
@@ -57,7 +61,8 @@
     "title": "Why We Sleep",
     "type": "書本",
     "categories": "健康",
-    "year": 1958
+    "year": 1958,
+    "price": 300
   },
   {
     "author": "Ludovico Einaudi",
@@ -69,6 +74,7 @@
     "title": "Jeroen van Veen",
     "type": "唱片",
     "categories": "音樂",
-    "year": 1958
+    "year": 1958,
+    "price": 300
   }
 ]
